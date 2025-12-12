@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,217 +7,108 @@
 
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #fff7f0;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #ffad6e; /* cor da sua marca */
+            color: #fff;
+            text-align: center;
         }
 
-        /* Header */
         header {
-            background-color: #ffa962;
-            padding: 20px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            padding: 40px 20px;
         }
 
         header img {
-            height: 55px;
+            max-width: 360px;
+            width: 100%;
+            height: auto;         /* mantém a proporção correta */
+            display: block;
+            margin: 0 auto 20px auto;
         }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            font-size: 18px;
-        }
-
-        /* Hero */
-        .hero {
-            background: #ffb476;
-            padding: 60px 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 48px;
+        h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
-        .hero p {
-            font-size: 20px;
-        }
-
-        /* Produtos */
-        .produtos {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .produtos h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 0 20px;
-        }
-
-        .card {
+        .container {
             background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: black;
+            border-radius: 18px;
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.15);
         }
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-        }
-
-        /* Contato */
-        .contato {
-            background: #ffe0c2;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .contato h2 {
-            font-size: 32px;
-        }
-
-        .contato p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        /* Instagram */
-        #instagram {
-            background: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        #instagram img {
-            width: 180px;
-            margin-top: 15px;
-            border-radius: 10px;
-        }
-
-        /* WhatsApp botão fixo */
         .whatsapp-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
+            bottom: 22px;
+            right: 22px;
+            background: #25d366;
             color: white;
-            padding: 15px 20px;
-            font-size: 18px;
+            padding: 18px 22px;
             border-radius: 50px;
             text-decoration: none;
+            font-size: 20px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 999;
+            box-shadow: 0 0 12px rgba(0,0,0,0.25);
         }
 
-        /* Footer */
+        .instagram-section img {
+            width: 160px;
+            height: 160px;
+        }
+
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #ffa962;
-            color: white;
-            margin-top: 30px;
+            margin: 40px 0;
+            font-size: 14px;
+            opacity: 0.8;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-     <img src="logo-casa-e-colchao.png" alt="Logo Casa & Colchão" style="max-width: 420px; width: 100%; height: auto; margin-bottom: 38px; display: block;">
-<img src="LOGO CASA E COLCHÃO.png" alt="Logo Casa & Colchão" style="width: 380px; height: auto; margin-bottom: 38px;">
-        <nav>
-            <a href="#produtos">Produtos</a>
-            <a href="#instagram">Instagram</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<header>
+    <img src="logo-casa-e-colchao.png" alt="Logo Casa & Colchão">
+    <h1>Casa & Colchão</h1>
+    <p>Conforto, qualidade e o melhor preço para seu descanso.</p>
+</header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <h1>Conforto para suas melhores noites</h1>
-        <p>Colchões, camas e acessórios de qualidade para transformar seu descanso</p>
-    </section>
+<div class="container">
 
-    <!-- Produtos -->
-    <section class="produtos" id="produtos">
-        <h2>Nossos Produtos</h2>
+    <h2>📍 Endereço</h2>
+    <p><strong>Seme Simão, 1980</strong><br>
+    Dentro do Posto Ipiranga — Uberlândia, MG</p>
 
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1615873968403-89e280f6f4b2?auto=format&fit=crop&w=800&q=60">
-                <h3>Colchões Premium</h3>
-                <p>Conforto e durabilidade para seu descanso.</p>
-            </div>
+    <h2>🛏️ Produtos</h2>
+    <p>Colchões, camas box, travesseiros e muito mais.</p>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1585559605151-8f42f87a08d8?auto=format&fit=crop&w=800&q=60">
-                <h3>Camas Box</h3>
-                <p>Modelos resistentes e elegantes.</p>
-            </div>
+    <h2>📌 Localização no mapa</h2>
+    <iframe 
+        src="https://www.google.com/maps?q=Seme+Sim%C3%A3o,+1980,+Uberl%C3%A2ndia&output=embed" 
+        width="100%" height="320" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
+    </iframe>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1618219947428-66667a70aa7a?auto=format&fit=crop&w=800&q=60">
-                <h3>Travesseiros</h3>
-                <p>Mais conforto e ergonomia para seu sono.</p>
-            </div>
-        </div>
-    </section>
+    <h2 style="margin-top: 40px;">📸 Siga-nos no Instagram</h2>
+    <p>@casaecolchao</p>
 
-    <!-- Instagram -->
-    <section id="instagram">
-        <h2>Siga-nos no Instagram</h2>
-        <p>@casaecolchao</p>
-        <img src="qr_instagram.png" alt="QR Code Instagram Casa e Colchão">
-    </section>
+    <div class="instagram-section">
+        <img src="qr_instagram.png" alt="QR Code Instagram">
+    </div>
 
-    <!-- Contato -->
-    <section class="contato" id="contato">
-        <h2>Fale Conosco</h2>
+</div>
 
-        <p>Whatsapp: <strong>(34) 99670-1594</strong></p>
+<a class="whatsapp-btn" href="https://wa.me/5534996701594" target="_blank">
+    WhatsApp
+</a>
 
-        <p>Endereço: <strong>Seme Simão, 1980 (dentro do Posto Ipiranga), Uberlândia - MG</strong></p>
-
-        <!-- MAPA -->
-        <div style="margin-top:20px; width:100%; max-width:600px; margin-left:auto; margin-right:auto;">
-            <iframe 
-                src="https://www.google.com/maps?q=Avenida%20Seme%20Sim%C3%A3o%2C%201980%20Uberl%C3%A2ndia&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
-    </section>
-
-    <!-- Botão WhatsApp -->
-    <a class="whatsapp-btn" href="https://wa.me/5534996701594" target="_blank">
-        💬 WhatsApp
-    </a>
-
-    <!-- Rodapé -->
-    <footer>
-        © 2025 Casa & Colchão — Todos os direitos reservados
-    </footer>
+<footer>
+    © 2025 Casa & Colchão — Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
