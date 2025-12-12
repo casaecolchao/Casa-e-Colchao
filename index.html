@@ -7,42 +7,53 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #ffad6e; /* cor da sua marca */
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background: #ffbe80;
+            color: #333;
             text-align: center;
         }
 
+        /* LOGO */
         header {
-            padding: 40px 20px;
+            padding: 30px;
         }
 
         header img {
-            max-width: 360px;
+            max-width: 380px;
             width: 100%;
-            height: auto;         /* mantém a proporção correta */
+            height: auto;
             display: block;
-            margin: 0 auto 20px auto;
-        }
-
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            margin: 0 auto;
         }
 
         .container {
-            background: white;
-            color: black;
-            border-radius: 18px;
+            background: #fff;
             width: 90%;
             max-width: 900px;
-            margin: auto;
+            margin: 20px auto;
+            border-radius: 18px;
             padding: 30px;
             box-shadow: 0 0 18px rgba(0,0,0,0.15);
         }
 
+        h2 {
+            color: #ff7a00;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /* Instagram QR */
+        .instagram-section img {
+            width: 170px;
+            height: 170px;
+            border-radius: 12px;
+        }
+
+        /* WhatsApp Button */
         .whatsapp-btn {
             position: fixed;
             bottom: 22px;
@@ -54,18 +65,16 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            box-shadow: 0 0 12px rgba(0,0,0,0.25);
-        }
-
-        .instagram-section img {
-            width: 160px;
-            height: 160px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.35);
+            z-index: 999;
         }
 
         footer {
-            margin: 40px 0;
+            margin-top: 40px;
+            padding: 20px;
+            background: #ff8c2b;
+            color: white;
             font-size: 14px;
-            opacity: 0.8;
         }
     </style>
 </head>
@@ -74,34 +83,39 @@
 
 <header>
     <img src="logo-casa-e-colchao.png" alt="Logo Casa & Colchão">
-    <h1>Casa & Colchão</h1>
-    <p>Conforto, qualidade e o melhor preço para seu descanso.</p>
 </header>
 
 <div class="container">
 
+    <!-- Endereço -->
     <h2>📍 Endereço</h2>
     <p><strong>Seme Simão, 1980</strong><br>
     Dentro do Posto Ipiranga — Uberlândia, MG</p>
 
+    <!-- Produtos -->
     <h2>🛏️ Produtos</h2>
-    <p>Colchões, camas box, travesseiros e muito mais.</p>
+    <p>Colchões, camas box, travesseiros e diversos itens para seu conforto.</p>
 
-    <h2>📌 Localização no mapa</h2>
+    <!-- Mapa -->
+    <h2>🗺️ Como chegar</h2>
     <iframe 
-        src="https://www.google.com/maps?q=Seme+Sim%C3%A3o,+1980,+Uberl%C3%A2ndia&output=embed" 
-        width="100%" height="320" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
+        src="https://www.google.com/maps?q=Seme+Simão,+1980,+Uberlândia&output=embed" 
+        width="100%" height="320" 
+        style="border:0; border-radius: 12px;" 
+        allowfullscreen="" loading="lazy">
     </iframe>
 
+    <!-- Instagram -->
     <h2 style="margin-top: 40px;">📸 Siga-nos no Instagram</h2>
     <p>@casaecolchao</p>
 
     <div class="instagram-section">
-        <img src="qr_instagram.png" alt="QR Code Instagram">
+        <img src="qr_instagram.png" alt="QR Code do Instagram">
     </div>
 
 </div>
 
+<!-- WhatsApp FIXO -->
 <a class="whatsapp-btn" href="https://wa.me/5534996701594" target="_blank">
     WhatsApp
 </a>
