@@ -1,128 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Casa &amp; Colchão</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #004d40; color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
-    header img { height: 60px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    #oferta-mes { text-align: center; padding: 20px; background: #f2f2f2; }
-    #oferta-mes img { max-width: 100%; height: auto; }
-    #produtos { padding: 20px; background: #ffffff; }
-    #produtos h2 { text-align: center; margin-bottom: 20px; }
-    .products-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .product { width: 300px; text-align: center; }
-    .product img { width: 100%; height: auto; }
-    .product-description { font-size: 14px; line-height: 1.5; color: #555; text-align: justify; }
-    #instagram { padding: 20px; background: #e0f7fa; text-align: center; }
-    #instagram h2 { margin-bottom: 10px; }
-    #instagram img { width: 200px; height: auto; }
-    #contato { padding: 20px; background: #f9f9f9; }
-    #contato h2 { text-align: center; margin-bottom: 10px; }
-    #contato p { text-align: center; margin: 5px 0; }
-    #contato iframe { width: 100%; height: 300px; border: 0; margin-top: 10px; }
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; font-size: 20px; padding: 15px; border-radius: 50%; text-decoration: none; text-align: center; }
-    footer { background: #004d40; color: white; text-align: center; padding: 10px 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa & Colchão</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff7f0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff9f4d;
+            padding: 12px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        header img {
+            max-width: 280px;
+            height: auto;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Banner Promo */
+        .banner-promo {
+            background: #ffd2a6;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .banner-promo h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .banner-promo img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: #ffbe8c;
+            padding: 35px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Produtos */
+        .produtos {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .produtos h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #222;
+        }
+
+        .descricao-produto {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .descricao-produto p {
+            margin: 4px 0;
+        }
+
+        /* Instagram */
+        #instagram {
+            background: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #instagram img {
+            width: 180px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        /* Contato */
+        .contato {
+            background: #ffe0c2;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 32px;
+        }
+
+        .contato p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff9f4d;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
-  <img src="logo-casa-e-colchao.png" alt="Logo Casa &amp; Colchão">
-  <nav>
-    <a href="#produtos">Produtos</a>
-    <a href="#instagram">Instagram</a>
-    <a href="#contato">Contato</a>
-  </nav>
+    <img src="logo-casa-e-colchao.png" alt="Casa & Colchão">
+    <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
 
-<section id="oferta-mes">
-  <h2>Oferta do Mês</h2>
-  <img src="PRINCE_DEZ.png" alt="Oferta do Mês: PRINCE_DEZ">
+<!-- BANNER PROMOÇÃO DO MÊS -->
+<section class="banner-promo">
+    <h2>🔥 Promoção do Mês</h2>
+    <img src="PRINCE_DEZ.png" alt="Promoção Conjunto Prince">
 </section>
 
-<section id="produtos">
-  <h2>Nossos Produtos</h2>
-  <div class="products-container">
-    <div class="product">
-      <h3>Allure Gel</h3>
-      <img src="Allure gel.png" alt="Allure Gel">
-      <p class="product-description">
-        O colchão Allure Gel combina espuma de alta densidade com camadas de gel refrescante para regular a temperatura do corpo durante o sono. Proporciona suporte ergonômico e maciez ideal, aliviando pontos de pressão e garantindo conforto extremo para uma noite de descanso revigorante.
-      </p>
+<section class="hero">
+    <h1>Conforto para suas melhores noites</h1>
+    <p>Colchões e camas com qualidade e conforto</p>
+</section>
+
+<section class="produtos" id="produtos">
+    <h2>Nossos Produtos</h2>
+
+    <div class="grid">
+
+    <div class="card">
+        <img src="Allure gel.png">
+        <h3>Allure Gel</h3>
+        <div class="descricao-produto">
+            <p>35cm de altura</p>
+            <p>Pillow top (espuma com visco gel)</p>
+            <p>Tecido Linho White Smooth</p>
+            <p>Espumas D24 e D28</p>
+            <p>Suporte 180kg/lado</p>
+            <p><strong>Garantia 3 anos</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Black Diamond</h3>
-      <img src="Black Diamond.png" alt="Black Diamond">
-      <p class="product-description">
-        O colchão Black Diamond é um modelo premium que oferece durabilidade e conforto superiores. Com molas ensacadas individualmente e revestimento em tecido de luxo, ele distribui o peso de forma uniforme e promove alinhamento adequado da coluna, garantindo noites de sono mais saudáveis.
-      </p>
+
+    <div class="card">
+        <img src="Bleu Plus.png">
+        <h3>Bleu Brown Plus</h3>
+        <div class="descricao-produto">
+            <p>26cm de altura</p>
+            <p>Pillow top em malha 180g</p>
+            <p>Espumas D26 e D80</p>
+            <p>Suporte 150kg/lado</p>
+            <p><strong>Garantia 1 ano</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Bleu Plus</h3>
-      <img src="Bleu Plus.png" alt="Bleu Plus">
-      <p class="product-description">
-        O colchão Bleu Plus possui camadas de espuma viscoelástica que se adaptam aos contornos do corpo, proporcionando sensação de "abraço" ao se deitar. Seu tecido azul premium é hipoalergênico e respirável, mantendo o colchão fresco e protegido contra ácaros.
-      </p>
+
+    <div class="card">
+        <img src="Dream SKY HR.png">
+        <h3>Dream Sky HR</h3>
+        <div class="descricao-produto">
+            <p>35cm de altura</p>
+            <p>Pillow top espuma HR</p>
+            <p>Molas ensacadas (Pocket)</p>
+            <p>Malha 280g Evocare</p>
+            <p>Suporte 150kg/lado</p>
+            <p><strong>Garantia 5 anos</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Coton Pocket</h3>
-      <img src="Coton Pocket.jpg" alt="Coton Pocket">
-      <p class="product-description">
-        O colchão Coton Pocket combina o suporte das molas ensacadas individuais com o conforto da espuma de algodão. Essa tecnologia híbrida garante resistência e ótimo suporte, além de proporcionar uma superfície de sono respirável e acolhedora para todas as noites.
-      </p>
+
+    <div class="card">
+        <img src="Black Diamond.png">
+        <h3>Black Diamond</h3>
+        <div class="descricao-produto">
+            <p>30cm de altura</p>
+            <p>Pillow top espuma D28</p>
+            <p>Molas ensacadas (Pocket)</p>
+            <p>Lateral em linho</p>
+            <p><strong>Garantia 3 anos</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Dream SKY HR</h3>
-      <img src="Dream SKY HR.png" alt="Dream SKY HR">
-      <p class="product-description">
-        O colchão Dream SKY HR é feito com espuma de alta resiliência (HR) que oferece ótima densidade e recuperação rápida. Ele proporciona firmeza média e durabilidade prolongada, ideal para quem busca apoio firme sem abrir mão do conforto durante todo o sono.
-      </p>
+
+    <div class="card">
+        <img src="Coton Pocket.jpg">
+        <h3>Coton Pocket</h3>
+        <div class="descricao-produto">
+            <p>31cm de altura</p>
+            <p>Pillow top com espuma D28</p>
+            <p>Molas ensacadas (Pocket)</p>
+            <p><strong>Garantia 1 ano</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Tander 1.5</h3>
-      <img src="Tander 1.5.png" alt="Tander 1.5">
-      <p class="product-description">
-        O colchão Tander 1.5 é um modelo de tamanho casal (1,5m) confeccionado com espumas de densidade diferenciada para as camadas de conforto e base. Ele oferece equilíbrio entre firmeza e maciez, atendendo casais e pessoas que precisam de apoio extra para a coluna.
-      </p>
+
+    <div class="card">
+        <img src="Tander 1.5.png">
+        <h3>Tander 1.5</h3>
+        <div class="descricao-produto">
+            <p>30cm de altura</p>
+            <p>Lâmina de espuma D33</p>
+            <p>Ortopédico</p>
+            <p>Suporte 150kg/lado</p>
+            <p><strong>Garantia 1 ano</strong></p>
+        </div>
     </div>
-    <div class="product">
-      <h3>Pérola Premium D33</h3>
-      <img src="perola_premium_d33.avif" alt="Pérola Premium D33">
-      <p class="product-description">
-        O colchão Pérola Premium D33 é confeccionado com espuma de poliuretano de alta densidade (D33), garantindo maior suporte ao corpo. Ideal para quem busca firmeza superior, ele é indicado para pessoas com mais peso ou para quem prefere colchões mais firmes sem abrir mão do conforto.
-      </p>
+
+    <div class="card">
+        <img src="PEROLA D33_edited.avif">
+        <h3>Pérola D33</h3>
+        <div class="descricao-produto">
+            <p>Alturas: 17cm ou 20cm</p>
+            <p>Espuma D33</p>
+            <p>Dupla face</p>
+            <p>Suporte 100kg/lado</p>
+        </div>
     </div>
-  </div>
+
+    <div class="card">
+        <img src="perola_premium_d33.avif">
+        <h3>Pérola Premium</h3>
+        <div class="descricao-produto">
+            <p>24cm de altura</p>
+            <p>Pillow Top Europeu</p>
+            <p>Espuma D33</p>
+            <p>Dupla face</p>
+            <p>Suporte 100kg/lado</p>
+        </div>
+    </div>
+
+</div>
+
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <section id="instagram">
-  <h2>Instagram</h2>
-  <p>Siga-nos no Instagram para acompanhar novidades e promoções!</p>
-  <img src="qr_instagram.png" alt="QR Code para nosso Instagram">
+    <h2>Siga-nos no Instagram</h2>
+    <p>@casaecolchao</p>
+    <img src="qr_instagram.png">
 </section>
 
-<section id="contato">
-  <h2>Contato</h2>
-  <p>Telefone: (34) 99999-0000</p>
-  <p>Endereço: Seme Simão, 1980 - Uberlândia, MG</p>
-  <iframe 
-    src="https://maps.google.com/maps?q=Seme%20Sim%C3%A3o%2C%201980%2C%20Uberl%C3%A2ndia%2C%20MG&output=embed" 
-    allowfullscreen="" 
-    loading="lazy" 
-    title="Mapa Casa &amp; Colchão">
-  </iframe>
+<section class="contato" id="contato">
+    <h2>Fale Conosco</h2>
+    <p><strong>WhatsApp:</strong> (34) 99670-1594</p>
+    <p><strong>Endereço:</strong> Seme Simão, 1980 – Uberlândia</p>
+
+    <div style="margin-top:20px; max-width:600px; margin:auto;">
+        <iframe 
+            src="https://www.google.com/maps?q=Avenida%20Seme%20Sim%C3%A3o%2C%201980%20Uberl%C3%A2ndia&output=embed"
+            width="100%" height="300" style="border:0; border-radius:10px;">
+        </iframe>
+    </div>
 </section>
 
-<a href="https://wa.me/5534999990000" class="whatsapp">WhatsApp</a>
+<a class="whatsapp-btn" href="https://wa.me/5534996701594" target="_blank">
+    💬 WhatsApp
+</a>
 
 <footer>
-  <p>© 2025 Casa &amp; Colchão. Todos os direitos reservados.</p>
+    © 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
 
 </body>
 </html>
+~
