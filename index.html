@@ -1,159 +1,185 @@
+<div class="grid">
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa & Colchão</title>
 
-<title>Casa & Colchão | Loja de Colchões em Uberlândia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff7f0;
+            color: #333;
+        }
 
-<meta name="description" content="Loja de colchões em Uberlândia. Colchão ortopédico, colchão de casal, cama box e conforto para suas melhores noites.">
+        /* Header */
+        header {
+            background-color: #ff9f4d;
+            padding: 12px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff7f0;
-    color: #333;
-}
+        header img {
+            max-width: 280px;
+            height: auto;
+        }
 
-/* Header */
-header {
-    background-color: #ff9f4d;
-    padding: 12px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        }
 
-header img {
-    max-width: 260px;
-    height: auto;
-    background-color: #ff9f4d;
-}
+        /* Banner Promo */
+        .banner-promo {
+            background: #ffd2a6;
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-/* Menu */
-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    font-size: 18px;
-}
+        .banner-promo h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
 
-/* Banner Promo */
-.banner-promo {
-    background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
-}
+        .banner-promo img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
 
-.banner-promo img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 16px;
-}
+        /* Hero */
+        .hero {
+            background: #ffbe8c;
+            padding: 35px 20px;
+            text-align: center;
+            color: white;
+        }
 
-/* Novidade */
-.novidade {
-    background: #fff;
-    padding: 35px 20px;
-    text-align: center;
-}
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-.novidade h2 {
-    font-size: 26px;
-    color: #ff7a00;
-}
+        .hero p {
+            font-size: 18px;
+        }
 
-.novidade p {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
+        /* Produtos */
+        .produtos {
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-.novidade img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+        .produtos h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
 
-/* Hero */
-.hero {
-    background: #ffbe8c;
-    padding: 35px 20px;
-    text-align: center;
-    color: white;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-.hero h1 {
-    font-size: 34px;
-}
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
 
-.hero p {
-    font-size: 18px;
-}
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
 
-/* Produtos */
-.produtos {
-    padding: 40px 20px;
-    text-align: center;
-}
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #222;
+        }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+        .descricao-produto {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
 
-.card {
-    background: white;
-    border-radius: 14px;
-    padding: 18px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        .descricao-produto p {
+            margin: 4px 0;
+        }
 
-/* Instagram */
-#instagram {
-    background: #fff;
-    text-align: center;
-    padding: 40px 20px;
-}
+        /* Instagram */
+        #instagram {
+            background: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-/* Contato */
-.contato {
-    background: #ffe0c2;
-    padding: 40px 20px;
-    text-align: center;
-}
+        #instagram img {
+            width: 180px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
 
-/* WhatsApp */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        /* Contato */
+        .contato {
+            background: #ffe0c2;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #ff9f4d;
-    color: white;
-}
-</style>
+        .contato h2 {
+            font-size: 32px;
+        }
+
+        .contato p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff9f4d;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo-casa-e-colchao.png" alt="Casa & Colchão Uberlândia">
+    <img src="logo-casa-e-colchao.png" alt="Casa & Colchão">
     <nav>
         <a href="#produtos">Produtos</a>
         <a href="#instagram">Instagram</a>
@@ -161,28 +187,36 @@ footer {
     </nav>
 </header>
 
+<!-- BANNER PROMOÇÃO DO MÊS -->
 <section class="banner-promo">
     <h2>🔥 Promoção do Mês</h2>
-    <img src="PRINCE_DEZ.png" alt="Promoção de colchões em Uberlândia">
-</section>
-
-<section class="novidade">
-    <h2>✨ Novidade chegando por aí...</h2>
-    <p>Toalhas personalizadas com monograma bordado</p>
-    <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="Toalha branca com monograma bordado">
+    <img src="PRINCE_DEZ.png" alt="Promoção Conjunto Prince">
 </section>
 
 <section class="hero">
-    <h1>Conforto para suas melhores noites em Uberlândia</h1>
-    <p>
-        Loja de colchões em Uberlândia com colchão ortopédico, colchão de casal,
-        cama box e os melhores colchões para sua saúde e descanso.
-    </p>
+    <h1>Conforto para suas melhores noites</h1>
+    <p>Colchões e camas com qualidade e conforto</p>
 </section>
 
 <section class="produtos" id="produtos">
-    <h2>Nossos Colchões</h2>
-    <!-- seus cards continuam iguais -->
+    <h2>Nossos Produtos</h2>
+
+    <div class="grid">
+
+        <!-- PRODUTOS (mantidos iguais aos seus) -->
+
+       <div class="grid">
+
+    <div class="card">
+        <img src="Allure gel.png">
+@@ -97,3 +303,39 @@ <h3>Pérola Premium</h3>
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
 </section>
 
 <section id="instagram">
@@ -194,7 +228,14 @@ footer {
 <section class="contato" id="contato">
     <h2>Fale Conosco</h2>
     <p><strong>WhatsApp:</strong> (34) 99670-1594</p>
-    <p><strong>Endereço:</strong> Avenida Seme Simão, 1980 – Uberlândia</p>
+    <p><strong>Endereço:</strong> Seme Simão, 1980 – Uberlândia</p>
+
+    <div style="margin-top:20px; max-width:600px; margin:auto;">
+        <iframe 
+            src="https://www.google.com/maps?q=Avenida%20Seme%20Sim%C3%A3o%2C%201980%20Uberl%C3%A2ndia&output=embed"
+            width="100%" height="300" style="border:0; border-radius:10px;">
+        </iframe>
+    </div>
 </section>
 
 <a class="whatsapp-btn" href="https://wa.me/5534996701594" target="_blank">
@@ -202,7 +243,7 @@ footer {
 </a>
 
 <footer>
-    © 2025 Casa & Colchão — Loja de Colchões em Uberlândia
+    © 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
 
 </body>
