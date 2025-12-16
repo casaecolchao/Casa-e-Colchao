@@ -187,6 +187,44 @@ header img {
             color: white;
             margin-top: 30px;
         }
+        .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.instagram-link span {
+    color: #ff9f4d;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Hover (desktop) */
+.instagram-link:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .instagram-link span {
+        font-size: 22px;
+    }
+
+    .instagram-icon {
+        width: 32px;
+        height: 32px;
+    }
     </style>
 </head>
 
@@ -327,12 +365,13 @@ header img {
    target="_blank"
    class="instagram-link">
 
-    <img src="logo_instagram.avif"
+    <img src="insta.jpg"
          alt="Instagram Casa & Colchão"
          class="instagram-icon">
 
     <span>@casaecolchao</span>
 </a>
+
 
 
     <br><br>
