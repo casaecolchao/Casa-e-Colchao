@@ -124,17 +124,28 @@ header img {
         }
 
         /* Instagram */
-        #instagram {
-            background: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
+       .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+}
 
-        #instagram img {
-            width: 180px;
-            margin-top: 15px;
-            border-radius: 10px;
-        }
+.instagram-link span {
+    color: #ff9f4d;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+    
 
         /* Contato */
         .contato {
@@ -312,18 +323,17 @@ header img {
 <section id="instagram">
     <h2>Clique no link abaixo e siga-nos no Instagram</h2>
 
-    <a href="https://www.instagram.com/casaecolchao" 
-       target="_blank" 
-       style="display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
+<a href="https://www.instagram.com/casaecolchao"
+   target="_blank"
+   class="instagram-link">
 
-        <img src="insta.jpg" 
-             alt="Instagram Casa & Colchão"
-             style="width:56px; height:56px;">
+    <img src="logo_instagram.avif"
+         alt="Instagram Casa & Colchão"
+         class="instagram-icon">
 
-        <span style="color:#ff9f4d; font-weight:bold; font-size:20px;">
-            @casaecolchao
-        </span>
-    </a>
+    <span>@casaecolchao</span>
+</a>
+
 
     <br><br>
 
