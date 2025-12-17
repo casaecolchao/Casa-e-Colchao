@@ -233,6 +233,38 @@ footer {
         margin-left: 0;
         font-size: 16px;
     }
+    /* ===== CATEGORIAS PRODUTOS ===== */
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.categorias button {
+    background: #ff9f4d;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.categorias button.active {
+    background: #e9781f;
+}
+
+.categoria-produtos {
+    display: none;
+}
+
+.categoria-produtos.active {
+    display: block;
+}
+
 </style>
 </head>
 
@@ -259,7 +291,16 @@ footer {
 <section class="produtos" id="produtos">
     <h2>Nossos Produtos</h2>
 
-    <div class="grid">
+    <div class="categorias">
+        <button class="active" onclick="mostrarCategoria('cat1')">Camas, Colchões e Sofá-Cama</button>
+        <button onclick="mostrarCategoria('cat2')">Toalhas e Roupas de Cama</button>
+        <button onclick="mostrarCategoria('cat3')">Cabeceiras</button>
+        <button onclick="mostrarCategoria('cat4')">Cama Pet</button>
+    </div>
+
+    <!-- CATEGORIA 1 -->
+    <div id="cat1" class="categoria-produtos active">
+        <div class="grid">
 
         <div class="card">
             <img src="Allure gel.png">
@@ -356,7 +397,22 @@ footer {
                 <p>Suporte 100kg/lado</p>
             </div>
         </div>
+<!-- CATEGORIA 2 -->
+    <div id="cat2" class="categoria-produtos">
+        <p>Em breve: toalhas e roupas de cama personalizadas ✨</p>
+    </div>
 
+    <!-- CATEGORIA 3 -->
+    <div id="cat3" class="categoria-produtos">
+        <p>Em breve: cabeceiras sob medida 🛏️</p>
+    </div>
+
+    <!-- CATEGORIA 4 -->
+    <div id="cat4" class="categoria-produtos">
+        <p>Em breve: cama pet 🐾</p>
+    </div>
+
+        </section>
     </div>
 </section>
 
@@ -387,6 +443,19 @@ footer {
 <footer>
     © 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
+<script>
+function mostrarCategoria(id) {
+    document.querySelectorAll('.categoria-produtos').forEach(cat => {
+        cat.classList.remove('active');
+    });
 
+    document.querySelectorAll('.categorias button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
