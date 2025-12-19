@@ -4,36 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casa & Colchão</title>
-    <div id="categorias" class="categorias-grid">
-
-    <!-- CATEGORIA COM PRODUTOS -->
-    <div class="categoria-card" onclick="abrirCategoria('cat1')">
-        <img src="dreamsky.png">
-        <h3>Camas, Colchões e Sofá-Cama</h3>
-        <span class="btn-categoria">Ver produtos</span>
-    </div>
-
-    <!-- EM CONSTRUÇÃO -->
-    <div class="categoria-card">
-        <img src="categoria-toalhas.jpg">
-        <h3>Toalhas e Roupas de Cama</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-cabeceiras.jpg">
-        <h3>Cabeceiras</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-pet.jpg">
-        <h3>Cama Pet</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-</div>
-
 
 <style>
 /* ===== BASE ===== */
@@ -52,11 +22,10 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 120px;
-    box-sizing: border-box;
 }
 
 header img {
-    height: 120px;
+    height: 100px;
 }
 
 nav a {
@@ -67,20 +36,16 @@ nav a {
     font-size: 18px;
 }
 
-/* Mobile Header */
+/* Mobile header */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         height: auto;
-        padding: 15px;
         gap: 10px;
+        padding: 15px;
     }
     header img {
         height: 80px;
-    }
-    nav {
-        display: flex;
-        gap: 20px;
     }
     nav a {
         margin-left: 0;
@@ -88,17 +53,15 @@ nav a {
     }
 }
 
-/* ===== BANNER / SLIDER ===== */
+/* ===== BANNER ===== */
 .banner-promo {
     background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
+    padding: 25px 20px;
 }
 
 .slider {
     max-width: 1100px;
     margin: auto;
-    position: relative;
     overflow: hidden;
     border-radius: 16px;
 }
@@ -113,57 +76,7 @@ nav a {
 
 .slide img {
     width: 100%;
-    height: 480px;           /* DESKTOP */
-    object-fit: contain;     /* NÃO CORTA */
-    background-color: #ffd2a6;
-    border-radius: 16px;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-    .slide img {
-        height: 380px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .slide img {
-        height: 280px;
-    }
-}
-
-
-.slide span {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-    background: rgba(0,0,0,0.65);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-}
-/* ===== BANNER CONTAINER (OBRIGATÓRIO) ===== */
-.banner-promo {
-    background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.slider {
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    overflow: hidden; /* ISSO RESOLVE O CLIQUE */
-}
-
-.slide {
-    display: none;
-}
-
-.slide.active {
+    height: auto; /* NÃO CORTA */
     display: block;
 }
 
@@ -177,13 +90,14 @@ nav a {
 
 .hero h1 {
     font-size: 36px;
+    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 18px;
 }
 
-/* ===== PRODUTOS / CATEGORIAS ===== */
+/* ===== CATEGORIAS ===== */
 .produtos {
     padding: 40px 20px;
     text-align: center;
@@ -194,9 +108,6 @@ nav a {
     margin-bottom: 30px;
 }
 
-/* Categorias */
-/* ===== CATEGORIAS (PROFISSIONAL) ===== */
-/* ===== CATEGORIAS (PROFISSIONAL) ===== */
 .categorias-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -210,6 +121,7 @@ nav a {
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     text-align: center;
+    cursor: pointer;
 }
 
 .categoria-card:hover {
@@ -220,7 +132,7 @@ nav a {
 .categoria-card img {
     width: 100%;
     height: 220px;
-    object-fit: contain; /* NÃO CORTA */
+    object-fit: contain; /* imagem inteira */
     background: #f7f3ef;
     padding: 15px;
 }
@@ -228,50 +140,68 @@ nav a {
 .categoria-card h3 {
     margin: 15px 0 10px;
     font-size: 20px;
-    color: #222;
 }
 
 /* Botão */
 .btn-categoria {
     display: inline-block;
-    margin: 10px 0 20px;
-    padding: 10px 22px;
+    margin-bottom: 20px;
+    padding: 10px 24px;
     background: #ff9f4d;
     color: white;
     border-radius: 30px;
     font-weight: bold;
     font-size: 14px;
-    text-decoration: none;
 }
 
-/* Badge "Em breve" */
+/* Badge em breve */
 .badge-breve {
     display: inline-block;
-    margin: 10px 0 20px;
+    margin-bottom: 20px;
     padding: 6px 16px;
-    background: #ddd;
-    color: #666;
+    background: #eee;
+    color: #777;
     border-radius: 20px;
     font-size: 13px;
     font-weight: bold;
 }
 
-.descricao-produto {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Categoria conteúdo */
+/* ===== PRODUTOS ===== */
 .categoria-conteudo {
     display: none;
+    margin-top: 30px;
 }
 
 .voltar {
     text-align: left;
-    margin-bottom: 20px;
     color: #ff9f4d;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.descricao-produto {
+    font-size: 14px;
+    color: #555;
 }
 
 /* ===== INSTAGRAM ===== */
@@ -288,14 +218,14 @@ nav a {
     text-decoration: none;
 }
 
-.instagram-icon {
-    width: 24px;
-}
-
 .instagram-link span {
     color: #ff9f4d;
     font-weight: bold;
     font-size: 20px;
+}
+
+.instagram-icon {
+    width: 24px;
 }
 
 .qr-instagram {
@@ -319,11 +249,10 @@ nav a {
     color: white;
     padding: 15px 20px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: bold;
-    z-index: 9999; /* 🔥 ISSO RESOLVE */
+    text-decoration: none;
+    z-index: 9999;
 }
-
 
 /* ===== FOOTER ===== */
 footer {
@@ -332,40 +261,6 @@ footer {
     background: #ff9f4d;
     color: white;
 }
-    /* GARANTE CLIQUE NAS CATEGORIAS */
-.produtos {
-    position: relative;
-    z-index: 10;
-}
-
-.categoria-card {
-    position: relative;
-    z-index: 20;
-}
-    .categoria-info {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn-categoria {
-    align-self: flex-start;
-    background-color: #ff9f4d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-categoria:hover {
-    background-color: #ff8a2b;
-}
-
-
 </style>
 </head>
 
@@ -380,7 +275,6 @@ footer {
     </nav>
 </header>
 
-<!-- BANNER -->
 <section class="banner-promo">
     <div class="slider">
         <div class="slide active"><img src="dream.png"></div>
@@ -400,62 +294,128 @@ footer {
 <section class="produtos" id="produtos">
     <h2>Categorias</h2>
 
-  <div id="categorias" class="categorias-grid">
+    <div id="categorias" class="categorias-grid">
+        <div class="categoria-card" onclick="abrirCategoria('cat1')">
+            <img src="dreamsky.png">
+            <h3>Camas, Colchões e Sofá-Cama</h3>
+            <span class="btn-categoria">Ver produtos</span>
+        </div>
 
-    <!-- CATEGORIA COM PRODUTOS -->
-    <div class="categoria-card" onclick="abrirCategoria('cat1')">
-        <img src="dreamsky.png">
-        <h3>Camas, Colchões e Sofá-Cama</h3>
-        <span class="btn-categoria">Ver produtos</span>
+        <div class="categoria-card">
+            <img src="categoria-toalhas.jpg">
+            <h3>Toalhas e Roupas de Cama</h3>
+            <span class="badge-breve">Em breve</span>
+        </div>
+
+        <div class="categoria-card">
+            <img src="categoria-cabeceiras.jpg">
+            <h3>Cabeceiras</h3>
+            <span class="badge-breve">Em breve</span>
+        </div>
+
+        <div class="categoria-card">
+            <img src="categoria-pet.jpg">
+            <h3>Cama Pet</h3>
+            <span class="badge-breve">Em breve</span>
+        </div>
     </div>
 
-    <!-- EM CONSTRUÇÃO -->
-    <div class="categoria-card">
-        <img src="categoria-toalhas.jpg">
-        <h3>Toalhas e Roupas de Cama</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-cabeceiras.jpg">
-        <h3>Cabeceiras</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-pet.jpg">
-        <h3>Cama Pet</h3>
-        <span class="em-construcao">Em construção</span>
-    </div>
-
-</div>
-
-
-    <!-- CATEGORIA 1 -->
     <div id="cat1" class="categoria-conteudo">
         <div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div>
 
         <div class="grid">
-            <div class="card"><img src="Allure gel.png"><h3>Allure Gel</h3><div class="descricao-produto"><p>35cm de altura</p><p>Garantia 3 anos</p></div></div>
-            <div class="card"><img src="Bleu Plus.png"><h3>Bleu Brown Plus</h3><div class="descricao-produto"><p>26cm de altura</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="dream.png"><h3>Dream Sky HR</h3><div class="descricao-produto"><p>35cm de altura</p><p>Garantia 5 anos</p></div></div>
-            <div class="card"><img src="Black Diamond.png"><h3>Black Diamond</h3><div class="descricao-produto"><p>30cm de altura</p><p>Garantia 3 anos</p></div></div>
-            <div class="card"><img src="Coton Pocket.jpg"><h3>Coton Pocket</h3><div class="descricao-produto"><p>31cm de altura</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="Tander 1.5.png"><h3>Tander 1.5</h3><div class="descricao-produto"><p>Ortopédico</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="PEROLA D33_edited.avif"><h3>Pérola D33</h3><div class="descricao-produto"><p>Dupla face</p></div></div>
-            <div class="card"><img src="perola_premium_d33.avif"><h3>Pérola Premium</h3><div class="descricao-produto"><p>Pillow Top Europeu</p></div></div>
+  <div id="cat1" class="categoria-conteudo">
+    <div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="Allure gel.png">
+            <h3>Allure Gel</h3>
+            <div class="descricao-produto">
+                <p>35cm de altura</p>
+                <p>Pillow top com visco gel</p>
+                <p><strong>Garantia 3 anos</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Bleu Plus.png">
+            <h3>Bleu Brown Plus</h3>
+            <div class="descricao-produto">
+                <p>26cm de altura</p>
+                <p>Pillow top em malha 180g</p>
+                <p><strong>Garantia 1 ano</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Dream SKY HR.png">
+            <h3>Dream Sky HR</h3>
+            <div class="descricao-produto">
+                <p>35cm de altura</p>
+                <p>Molas ensacadas (Pocket)</p>
+                <p><strong>Garantia 5 anos</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Black Diamond.png">
+            <h3>Black Diamond</h3>
+            <div class="descricao-produto">
+                <p>30cm de altura</p>
+                <p>Molas ensacadas (Pocket)</p>
+                <p><strong>Garantia 3 anos</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Coton Pocket.jpg">
+            <h3>Coton Pocket</h3>
+            <div class="descricao-produto">
+                <p>31cm de altura</p>
+                <p>Molas ensacadas (Pocket)</p>
+                <p><strong>Garantia 1 ano</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Tander 1.5.png">
+            <h3>Tander 1.5</h3>
+            <div class="descricao-produto">
+                <p>Ortopédico</p>
+                <p><strong>Garantia 1 ano</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="PEROLA D33_edited.avif">
+            <h3>Pérola D33</h3>
+            <div class="descricao-produto">
+                <p>Espuma D33</p>
+                <p>Dupla face</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="perola_premium_d33.avif">
+            <h3>Pérola Premium</h3>
+            <div class="descricao-produto">
+                <p>Pillow Top Europeu</p>
+                <p>Espuma D33</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
         </div>
     </div>
-
-    <!-- OUTRAS CATEGORIAS -->
-    <div id="cat2" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve ✨</p></div>
-    <div id="cat3" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve 🛏️</p></div>
-    <div id="cat4" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve 🐾</p></div>
 </section>
 
 <section id="instagram">
     <h2>Siga-nos no Instagram</h2>
-    <a href="https://www.instagram.com/casaecolchao" target="_blank" class="instagram-link">
+    <a href="https://www.instagram.com/casaecolchao" class="instagram-link" target="_blank">
         <img src="insta.jpg" class="instagram-icon">
         <span>@casaecolchao</span>
     </a>
@@ -474,47 +434,30 @@ footer {
     © 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
+<script>
+let index = 0;
+const slides = document.querySelectorAll('.slide');
 
-        /* ===== SLIDER ===== */
-        let index = 0;
-        const slides = document.querySelectorAll('.slide');
+setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+}, 4000);
 
-        if (slides.length > 1) {
-            setInterval(() => {
-                slides[index].classList.remove('active');
-                index = (index + 1) % slides.length;
-                slides[index].classList.add('active');
-            }, 4000);
-        }
-    });
+function abrirCategoria(id) {
+    document.getElementById('categorias').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+}
 
-    /* ===== CATEGORIAS ===== */
-    function abrirCategoria(id) {
-        const categorias = document.getElementById('categorias');
-        const conteudos = document.querySelectorAll('.categoria-conteudo');
+function voltarCategorias() {
+    document.getElementById('categorias').style.display = 'grid';
+    document.getElementById('cat1').style.display = 'none';
+}
+</script>
 
-        categorias.style.display = 'none';
+</body>
+</html>
 
-        conteudos.forEach(el => {
-            el.style.display = 'none';
-        });
-
-        document.getElementById(id).style.display = 'block';
-    }
-
-    function voltarCategorias() {
-        const categorias = document.getElementById('categorias');
-        const conteudos = document.querySelectorAll('.categoria-conteudo');
-
-        categorias.style.display = 'grid';
-
-        conteudos.forEach(el => {
-            el.style.display = 'none';
-        });
-    }
-    </script>
 
 </body>
 </html>
