@@ -6,7 +6,6 @@
 <title>Casa & Colchão</title>
 
 <style>
-/* ===== BASE ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,63 +13,46 @@ body {
     color: #333;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header {
     background-color: #ffa568;
     padding: 10px 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 120px;
-    box-sizing: border-box;
+    align-items: center;
 }
 
 header img {
-    height: 120px;
+    height: 90px;
 }
 
 nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: bold;
     color: white;
-    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-/* Mobile Header */
+/* MOBILE HEADER */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        height: auto;
-        padding: 15px;
         gap: 10px;
     }
     header img {
-        height: 80px;
-    }
-    nav {
-        display: flex;
-        gap: 20px;
-    }
-    nav a {
-        margin-left: 0;
-        font-size: 16px;
+        height: 70px;
     }
 }
 
-/* ===== BANNER / SLIDER ===== */
-.banner-promo {
+/* BANNER */
+.banner {
     background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
+    padding: 20px;
 }
 
 .slider {
     max-width: 1100px;
     margin: auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
 }
 
 .slide {
@@ -83,168 +65,97 @@ nav a {
 
 .slide img {
     width: 100%;
-    height: 480px;           /* DESKTOP */
-    object-fit: contain;     /* NÃO CORTA */
-    background-color: #ffd2a6;
+    height: auto;
     border-radius: 16px;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-    .slide img {
-        height: 380px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .slide img {
-        height: 280px;
-    }
-}
-
-
-.slide span {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-    background: rgba(0,0,0,0.65);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-}
-/* ===== BANNER CONTAINER (OBRIGATÓRIO) ===== */
-.banner-promo {
-    background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.slider {
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    overflow: hidden; /* ISSO RESOLVE O CLIQUE */
-}
-
-.slide {
-    display: none;
-}
-
-.slide.active {
-    display: block;
-}
-
-/* ===== HERO ===== */
+/* HERO */
 .hero {
     background: #ffbe8c;
-    padding: 35px 20px;
+    padding: 30px;
     text-align: center;
     color: white;
 }
 
-.hero h1 {
-    font-size: 36px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-
-/* ===== PRODUTOS / CATEGORIAS ===== */
+/* CATEGORIAS */
 .produtos {
     padding: 40px 20px;
     text-align: center;
 }
 
-.produtos h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-/* Categorias */
-.categorias-grid {
+.categorias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
 }
 
-.categoria-card {
+.categoria {
     background: white;
     border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.categoria-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-}
-
-.categoria-card img {
+.categoria img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: 200px;
+    object-fit: contain;
+    background: #f7f3ef;
 }
 
-.categoria-card h3 {
-    margin: 0;
+.categoria h3 {
     padding: 15px;
 }
 
-/* Produtos grid */
+.categoria button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff9f4d;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* PRODUTOS */
+.categoria-conteudo {
+    display: none;
+    margin-top: 30px;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 20px;
 }
 
 .card {
     background: white;
+    padding: 15px;
     border-radius: 14px;
-    padding: 18px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
     text-align: left;
 }
 
 .card img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 10px;
 }
 
 .card h3 {
-    margin: 10px 0;
-    font-size: 20px;
+    margin-top: 10px;
 }
 
-.descricao-produto {
+.descricao-produto p {
+    margin: 4px 0;
     font-size: 14px;
-    color: #555;
 }
 
-/* Categoria conteúdo */
-.categoria-conteudo {
-    display: none;
-}
-
-.voltar {
-    text-align: left;
-    margin-bottom: 20px;
-    color: #ff9f4d;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* ===== INSTAGRAM ===== */
+/* INSTAGRAM */
 #instagram {
-    background: #fff;
-    padding: 40px 20px;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .instagram-link {
@@ -254,10 +165,6 @@ nav a {
     text-decoration: none;
 }
 
-.instagram-icon {
-    width: 24px;
-}
-
 .instagram-link span {
     color: #ff9f4d;
     font-weight: bold;
@@ -265,119 +172,45 @@ nav a {
 }
 
 .qr-instagram {
-    width: 130px;
+    width: 140px;
     margin-top: 15px;
 }
 
-/* ===== CONTATO ===== */
+/* CONTATO */
 .contato {
     background: #ffe0c2;
     padding: 40px 20px;
     text-align: center;
 }
 
-/* ===== WHATSAPP ===== */
-.whatsapp-btn {
+/* WHATSAPP */
+.whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
+    background: #25D366;
     color: white;
     padding: 15px 20px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: bold;
-    z-index: 9999; /* 🔥 ISSO RESOLVE */
-}
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
     z-index: 9999;
 }
-</style>
-<section class="contato" id="contato">
-    <h2>Fale Conosco</h2>
 
-    <p>
-        <strong>WhatsApp:</strong> (34) 99670-1594
-    </p>
-
-    <p style="margin-top:15px;">
-        <strong>Endereço:</strong><br>
-        Av. Seme Simão, 1980<br>
-        <em>(dentro do Posto Ipiranga)</em><br>
-        Uberlândia – MG
-    </p>
-
-    <div style="margin-top:25px; max-width:800px; margin-left:auto; margin-right:auto;">
-        <iframe
-            src="https://www.google.com/maps?q=Avenida%20Seme%20Sim%C3%A3o%2C%201980%20Uberl%C3%A2ndia%20MG&output=embed"
-            width="100%"
-            height="350"
-            style="border:0; border-radius:16px;"
-            allowfullscreen
-            loading="lazy">
-        </iframe>
-    </div>
-</section>
-
-
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 20px;
     background: #ff9f4d;
     color: white;
+    padding: 20px;
+    text-align: center;
 }
-    /* GARANTE CLIQUE NAS CATEGORIAS */
-.produtos {
-    position: relative;
-    z-index: 10;
-}
-
-.categoria-card {
-    position: relative;
-    z-index: 20;
-}
-    .categoria-info {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn-categoria {
-    align-self: flex-start;
-    background-color: #ff9f4d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-categoria:hover {
-    background-color: #ff8a2b;
-}
-
-
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo-casa-e-colchao.png" alt="Casa & Colchão">
+    <img src="logo-casa-e-colchao.png">
     <nav>
         <a href="#produtos">Produtos</a>
         <a href="#instagram">Instagram</a>
@@ -385,8 +218,7 @@ footer {
     </nav>
 </header>
 
-<!-- BANNER -->
-<section class="banner-promo">
+<section class="banner">
     <div class="slider">
         <div class="slide active"><img src="dream.png"></div>
         <div class="slide"><img src="orthoface.png"></div>
@@ -403,118 +235,152 @@ footer {
 </section>
 
 <section class="produtos" id="produtos">
-    <h2>Categorias</h2>
+<h2>Camas, Colchões e Sofá-Cama</h2>
 
-   <div id="categorias" class="categorias-grid">
+<div class="grid">
 
-    <!-- ÚNICA CATEGORIA CLICÁVEL -->
-    <div class="categoria-card" onclick="abrirCategoria('cat1')">
-        <img src="dreamsky.png">
-        <h3>Camas, Colchões e Sofá-Cama</h3>
-    </div>
-
-    <!-- NÃO CLICÁVEIS -->
-    <div class="categoria-card">
-        <img src="categoria-toalhas.jpg">
-        <h3>Toalhas e Roupas de Cama</h3>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-cabeceiras.jpg">
-        <h3>Cabeceiras</h3>
-    </div>
-
-    <div class="categoria-card">
-        <img src="categoria-pet.jpg">
-        <h3>Cama Pet</h3>
-    </div>
-
+<!-- PRODUTO 1 -->
+<div class="card">
+<img src="Allure gel.png">
+<h3>Allure Gel</h3>
+<div class="descricao-produto">
+<p>35cm de altura</p>
+<p>Pillow top com visco gel</p>
+<p>Tecido Linho White Smooth</p>
+<p>Espumas D24 e D28</p>
+<p>Suporte 180kg por lado</p>
+<p><strong>Garantia 3 anos</strong></p>
+</div>
 </div>
 
-    <!-- CATEGORIA 1 -->
-    <div id="cat1" class="categoria-conteudo">
-        <div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div>
+<!-- PRODUTO 2 -->
+<div class="card">
+<img src="Bleu Plus.png">
+<h3>Bleu Brown Plus</h3>
+<div class="descricao-produto">
+<p>26cm de altura</p>
+<p>Pillow top em malha 180g</p>
+<p>Espumas D26 e D80</p>
+<p>Suporte 150kg por lado</p>
+<p><strong>Garantia 1 ano</strong></p>
+</div>
+</div>
 
-        <div class="grid">
-            <div class="card"><img src="Allure gel.png"><h3>Allure Gel</h3><div class="descricao-produto"><p>35cm de altura</p><p>Garantia 3 anos</p></div></div>
-            <div class="card"><img src="Bleu Plus.png"><h3>Bleu Brown Plus</h3><div class="descricao-produto"><p>26cm de altura</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="dream.png"><h3>Dream Sky HR</h3><div class="descricao-produto"><p>35cm de altura</p><p>Garantia 5 anos</p></div></div>
-            <div class="card"><img src="Black Diamond.png"><h3>Black Diamond</h3><div class="descricao-produto"><p>30cm de altura</p><p>Garantia 3 anos</p></div></div>
-            <div class="card"><img src="Coton Pocket.jpg"><h3>Coton Pocket</h3><div class="descricao-produto"><p>31cm de altura</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="Tander 1.5.png"><h3>Tander 1.5</h3><div class="descricao-produto"><p>Ortopédico</p><p>Garantia 1 ano</p></div></div>
-            <div class="card"><img src="PEROLA D33_edited.avif"><h3>Pérola D33</h3><div class="descricao-produto"><p>Dupla face</p></div></div>
-            <div class="card"><img src="perola_premium_d33.avif"><h3>Pérola Premium</h3><div class="descricao-produto"><p>Pillow Top Europeu</p></div></div>
-        </div>
-    </div>
+<!-- PRODUTO 3 -->
+<div class="card">
+<img src="Dream SKY HR.png">
+<h3>Dream Sky HR</h3>
+<div class="descricao-produto">
+<p>35cm de altura</p>
+<p>Pillow top espuma HR</p>
+<p>Molas ensacadas (Pocket)</p>
+<p>Malha 280g Evocare</p>
+<p>Suporte 150kg por lado</p>
+<p><strong>Garantia 5 anos</strong></p>
+</div>
+</div>
 
-    <!-- OUTRAS CATEGORIAS -->
-    <div id="cat2" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve ✨</p></div>
-    <div id="cat3" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve 🛏️</p></div>
-    <div id="cat4" class="categoria-conteudo"><div class="voltar" onclick="voltarCategorias()">← Voltar às categorias</div><p>Em breve 🐾</p></div>
+<!-- PRODUTO 4 -->
+<div class="card">
+<img src="Black Diamond.png">
+<h3>Black Diamond</h3>
+<div class="descricao-produto">
+<p>30cm de altura</p>
+<p>Pillow top espuma D28</p>
+<p>Molas ensacadas (Pocket)</p>
+<p>Lateral em linho</p>
+<p><strong>Garantia 3 anos</strong></p>
+</div>
+</div>
+
+<!-- PRODUTO 5 -->
+<div class="card">
+<img src="Coton Pocket.jpg">
+<h3>Coton Pocket</h3>
+<div class="descricao-produto">
+<p>31cm de altura</p>
+<p>Pillow top espuma D28</p>
+<p>Molas ensacadas (Pocket)</p>
+<p><strong>Garantia 1 ano</strong></p>
+</div>
+</div>
+
+<!-- PRODUTO 6 -->
+<div class="card">
+<img src="Tander 1.5.png">
+<h3>Tander 1.5</h3>
+<div class="descricao-produto">
+<p>30cm de altura</p>
+<p>Lâmina de espuma D33</p>
+<p>Ortopédico</p>
+<p>Suporte 150kg por lado</p>
+<p><strong>Garantia 1 ano</strong></p>
+</div>
+</div>
+
+<!-- PRODUTO 7 -->
+<div class="card">
+<img src="PEROLA D33_edited.avif">
+<h3>Pérola D33</h3>
+<div class="descricao-produto">
+<p>Alturas: 17cm ou 20cm</p>
+<p>Espuma D33</p>
+<p>Dupla face</p>
+<p>Suporte 100kg por lado</p>
+</div>
+</div>
+
+<!-- PRODUTO 8 -->
+<div class="card">
+<img src="perola_premium_d33.avif">
+<h3>Pérola Premium</h3>
+<div class="descricao-produto">
+<p>24cm de altura</p>
+<p>Pillow Top Europeu</p>
+<p>Espuma D33</p>
+<p>Dupla face</p>
+<p>Suporte 100kg por lado</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="instagram">
-    <h2>Siga-nos no Instagram</h2>
-    <a href="https://www.instagram.com/casaecolchao" target="_blank" class="instagram-link">
-        <img src="insta.jpg" class="instagram-icon">
-        <span>@casaecolchao</span>
-    </a>
-    <br><br>
-    <img src="qr_instagram.png" class="qr-instagram">
+<h2>Siga-nos no Instagram</h2>
+<a href="https://www.instagram.com/casaecolchao" target="_blank" class="instagram-link">
+<img src="insta.jpg" width="24">
+<span>@casaecolchao</span>
+</a>
+<br><br>
+<img src="qr_instagram.png" class="qr-instagram">
 </section>
 
 <section class="contato" id="contato">
-    <h2>Fale Conosco</h2>
-    <p><strong>WhatsApp:</strong> (34) 99670-1594</p>
+<h2>Onde Estamos</h2>
+<p>Av. Seme Simão, 1980 (dentro do Posto Ipiranga)<br>Uberlândia-MG</p>
+
+<iframe
+src="https://www.google.com/maps?q=Avenida%20Seme%20Sim%C3%A3o%2C%201980%20Uberl%C3%A2ndia&output=embed"
+width="100%" height="300" style="border:0;border-radius:16px;">
+</iframe>
 </section>
 
-<a class="whatsapp-btn" href="https://wa.me/5534996701594">💬 WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/5534996701594">💬 WhatsApp</a>
 
 <footer>
-    © 2025 Casa & Colchão — Todos os direitos reservados
+© 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-        /* ===== SLIDER ===== */
-        let index = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        if (slides.length > 1) {
-            setInterval(() => {
-                slides[index].classList.remove('active');
-                index = (index + 1) % slides.length;
-                slides[index].classList.add('active');
-            }, 4000);
-        }
-    });
-
-    /* ===== CATEGORIAS ===== */
-    function abrirCategoria(id) {
-        const categorias = document.getElementById('categorias');
-        const conteudos = document.querySelectorAll('.categoria-conteudo');
-
-        categorias.style.display = 'none';
-
-        conteudos.forEach(el => {
-            el.style.display = 'none';
-        });
-
-        document.getElementById(id).style.display = 'block';
-    }
-
-    function voltarCategorias() {
-        const categorias = document.getElementById('categorias');
-        const conteudos = document.querySelectorAll('.categoria-conteudo');
-
-        categorias.style.display = 'grid';
-
-        conteudos.forEach(el => {
-            el.style.display = 'none';
-        });
-    }
-    </script>
+<script>
+let i=0;
+const slides=document.querySelectorAll('.slide');
+setInterval(()=>{
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},4000);
+</script>
 
 </body>
 </html>
