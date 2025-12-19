@@ -361,24 +361,47 @@ footer {
 </footer>
 
 <script>
-/* Slider */
+/* ===== SLIDER ===== */
 let index = 0;
 const slides = document.querySelectorAll('.slide');
 
-setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-}, 4000);
+if (slides.length > 0) {
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }, 4000);
+}
 
-/* Categorias */
+/* ===== CATEGORIAS ===== */
 function abrirCategoria(id) {
-    document.getElementById('categorias').style.display = 'none';
-    document.querySelectorAll('.categoria-conteudo').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+    const categorias = document.getElementById('categorias');
+    const conteudos = document.querySelectorAll('.categoria-conteudo');
+
+    if (categorias) {
+        categorias.style.display = 'none';
+    }
+
+    conteudos.forEach(el => {
+        el.style.display = 'none';
+    });
+
+    const alvo = document.getElementById(id);
+    if (alvo) {
+        alvo.style.display = 'block';
+    }
 }
 
 function voltarCategorias() {
-    document.getElementById('categorias').style.display = 'grid';
-    document.querySelectorAll('.categoria-conteudo').forEach(el => el.style.d
+    const categorias = document.getElementById('categorias');
+    const conteudos = document.querySelectorAll('.categoria-conteudo');
 
+    if (categorias) {
+        categorias.style.display = 'grid';
+    }
+
+    conteudos.forEach(el => {
+        el.style.display = 'none';
+    });
+}
+</script>
