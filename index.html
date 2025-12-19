@@ -69,7 +69,9 @@ nav a {
     max-width: 900px;
     margin: auto;
     position: relative;
+    overflow: hidden; /* ESSENCIAL */
 }
+
 
 .slide {
     display: none;
@@ -265,6 +267,17 @@ footer {
     background: #ff9f4d;
     color: white;
 }
+    /* GARANTE CLIQUE NAS CATEGORIAS */
+.produtos {
+    position: relative;
+    z-index: 10;
+}
+
+.categoria-card {
+    position: relative;
+    z-index: 20;
+}
+
 </style>
 </head>
 
