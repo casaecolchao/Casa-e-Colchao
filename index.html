@@ -4,6 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casa & Colchão</title>
+    <div id="categorias" class="categorias-grid">
+
+    <!-- CATEGORIA COM PRODUTOS -->
+    <div class="categoria-card" onclick="abrirCategoria('cat1')">
+        <img src="dreamsky.png">
+        <h3>Camas, Colchões e Sofá-Cama</h3>
+        <span class="btn-categoria">Ver produtos</span>
+    </div>
+
+    <!-- EM CONSTRUÇÃO -->
+    <div class="categoria-card">
+        <img src="categoria-toalhas.jpg">
+        <h3>Toalhas e Roupas de Cama</h3>
+        <span class="em-construcao">Em construção</span>
+    </div>
+
+    <div class="categoria-card">
+        <img src="categoria-cabeceiras.jpg">
+        <h3>Cabeceiras</h3>
+        <span class="em-construcao">Em construção</span>
+    </div>
+
+    <div class="categoria-card">
+        <img src="categoria-pet.jpg">
+        <h3>Cama Pet</h3>
+        <span class="em-construcao">Em construção</span>
+    </div>
+
+</div>
+
 
 <style>
 /* ===== BASE ===== */
@@ -366,31 +396,36 @@ footer {
 <section class="produtos" id="produtos">
     <h2>Categorias</h2>
 
-   <div id="categorias" class="categorias-grid">
+  <div id="categorias" class="categorias-grid">
 
-    <!-- ÚNICA CATEGORIA CLICÁVEL -->
+    <!-- CATEGORIA COM PRODUTOS -->
     <div class="categoria-card" onclick="abrirCategoria('cat1')">
         <img src="dreamsky.png">
         <h3>Camas, Colchões e Sofá-Cama</h3>
+        <span class="btn-categoria">Ver produtos</span>
     </div>
 
-    <!-- NÃO CLICÁVEIS -->
+    <!-- EM CONSTRUÇÃO -->
     <div class="categoria-card">
         <img src="categoria-toalhas.jpg">
         <h3>Toalhas e Roupas de Cama</h3>
+        <span class="em-construcao">Em construção</span>
     </div>
 
     <div class="categoria-card">
         <img src="categoria-cabeceiras.jpg">
         <h3>Cabeceiras</h3>
+        <span class="em-construcao">Em construção</span>
     </div>
 
     <div class="categoria-card">
         <img src="categoria-pet.jpg">
         <h3>Cama Pet</h3>
+        <span class="em-construcao">Em construção</span>
     </div>
 
 </div>
+
 
     <!-- CATEGORIA 1 -->
     <div id="cat1" class="categoria-conteudo">
