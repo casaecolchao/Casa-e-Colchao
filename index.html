@@ -381,54 +381,47 @@ footer {
     © 2025 Casa & Colchão — Todos os direitos reservados
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-    /* ===== SLIDER ===== */
-    let index = 0;
-    const slides = document.querySelectorAll('.slide');
+        /* ===== SLIDER ===== */
+        let index = 0;
+        const slides = document.querySelectorAll('.slide');
 
-    if (slides.length > 1) {
-        setInterval(() => {
-            slides[index].classList.remove('active');
-            index = (index + 1) % slides.length;
-            slides[index].classList.add('active');
-        }, 4000);
-    }
+        if (slides.length > 1) {
+            setInterval(() => {
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }, 4000);
+        }
+    });
 
-});
-</script>
+    /* ===== CATEGORIAS ===== */
+    function abrirCategoria(id) {
+        const categorias = document.getElementById('categorias');
+        const conteudos = document.querySelectorAll('.categoria-conteudo');
 
-
-/* ===== CATEGORIAS ===== */
-function abrirCategoria(id) {
-    const categorias = document.getElementById('categorias');
-    const conteudos = document.querySelectorAll('.categoria-conteudo');
-
-    if (categorias) {
         categorias.style.display = 'none';
+
+        conteudos.forEach(el => {
+            el.style.display = 'none';
+        });
+
+        document.getElementById(id).style.display = 'block';
     }
 
-    conteudos.forEach(el => {
-        el.style.display = 'none';
-    });
+    function voltarCategorias() {
+        const categorias = document.getElementById('categorias');
+        const conteudos = document.querySelectorAll('.categoria-conteudo');
 
-    const alvo = document.getElementById(id);
-    if (alvo) {
-        alvo.style.display = 'block';
-    }
-}
-
-function voltarCategorias() {
-    const categorias = document.getElementById('categorias');
-    const conteudos = document.querySelectorAll('.categoria-conteudo');
-
-    if (categorias) {
         categorias.style.display = 'grid';
-    }
 
-    conteudos.forEach(el => {
-        el.style.display = 'none';
-    });
-}
-</script>
+        conteudos.forEach(el => {
+            el.style.display = 'none';
+        });
+    }
+    </script>
+
+</body>
+</html>
