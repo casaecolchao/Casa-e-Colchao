@@ -291,28 +291,31 @@ footer {
 <section class="produtos" id="produtos">
     <h2>Categorias</h2>
 
-    <!-- CATEGORIAS -->
-    <div id="categorias" class="categorias-grid">
-        <div class="categoria-card" onclick="abrirCategoria('cat1')">
-            <img src="dreamsky.png">
-            <h3>Camas, Colchões e Sofá-Cama</h3>
-        </div>
+   <div id="categorias" class="categorias-grid">
 
-        <div class="categoria-card"('cat2')">
-            <img src="categoria-toalhas.jpg">
-            <h3>Toalhas e Roupas de Cama</h3>
-        </div>
-
-        <div class="categoria-card"('cat3')">
-            <img src="categoria-cabeceiras.jpg">
-            <h3>Cabeceiras</h3>
-        </div>
-
-        <div class="categoria-card" ('cat4')">
-            <img src="categoria-pet.jpg">
-            <h3>Cama Pet</h3>
-        </div>
+    <!-- ÚNICA CATEGORIA CLICÁVEL -->
+    <div class="categoria-card" onclick="abrirCategoria('cat1')">
+        <img src="dreamsky.png">
+        <h3>Camas, Colchões e Sofá-Cama</h3>
     </div>
+
+    <!-- NÃO CLICÁVEIS -->
+    <div class="categoria-card">
+        <img src="categoria-toalhas.jpg">
+        <h3>Toalhas e Roupas de Cama</h3>
+    </div>
+
+    <div class="categoria-card">
+        <img src="categoria-cabeceiras.jpg">
+        <h3>Cabeceiras</h3>
+    </div>
+
+    <div class="categoria-card">
+        <img src="categoria-pet.jpg">
+        <h3>Cama Pet</h3>
+    </div>
+
+</div>
 
     <!-- CATEGORIA 1 -->
     <div id="cat1" class="categoria-conteudo">
