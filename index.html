@@ -81,10 +81,18 @@ nav a {
 }
 
 .slide img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    max-height: 420px;
+    object-fit: cover;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .slide img {
+        max-height: 260px;
+    }
+}
+
+
 
 .slide span {
     position: absolute;
@@ -361,17 +369,23 @@ footer {
 </footer>
 
 <script>
-/* ===== SLIDER ===== */
-let index = 0;
-const slides = document.querySelectorAll('.slide');
+document.addEventListener('DOMContentLoaded', function () {
 
-if (slides.length > 0) {
-    setInterval(() => {
-        slides[index].classList.remove('active');
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('active');
-    }, 4000);
-}
+    /* ===== SLIDER ===== */
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    if (slides.length > 1) {
+        setInterval(() => {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }, 4000);
+    }
+
+});
+</script>
+
 
 /* ===== CATEGORIAS ===== */
 function abrirCategoria(id) {
