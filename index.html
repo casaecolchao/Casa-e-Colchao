@@ -58,18 +58,57 @@ nav a {
     }
 }
 
-/* Banner */
-.banner-promo {
-    background: #ffd2a6;
-    padding: 30px 20px;
-    text-align: center;
+<section class="banner-promo">
+    <div class="slider">
+
+        <img src="banner1.png" alt="Promoção 1">
+        <img src="banner2.png" alt="Promoção 2">
+        <img src="banner3.png" alt="Promoção 3">
+        <img src="banner4.png" alt="Promoção 4">
+        <img src="banner5.png" alt="Promoção 5">
+        <img src="banner6.png" alt="Promoção 6">
+
+    </div>
+</section>
+
 }
 
-.banner-promo img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+<section class="banner-promo">
+    <div class="slider">
+
+        <div class="slide active">
+            <img src="dream.png" alt="Dream">
+            <span>DREAM</span>
+        </div>
+
+        <div class="slide">
+            <img src="orthoface.png" alt="Orthoface">
+            <span>ORTHOFACE</span>
+        </div>
+
+        <div class="slide">
+            <img src="tander.png" alt="Tander">
+            <span>TANDER</span>
+        </div>
+
+        <div class="slide">
+            <img src="black.png" alt="Black">
+            <span>BLACK</span>
+        </div>
+
+        <div class="slide">
+            <img src="allure.png" alt="Allure">
+            <span>ALLURE</span>
+        </div>
+
+        <div class="slide">
+            <img src="seletto.png" alt="Seletto">
+            <span>SELETTO</span>
+        </div>
+
+    </div>
+</section>
+
 }
 
 /* Hero */
@@ -230,6 +269,24 @@ footer {
     background: #ff9f4d;
     color: white;
 }
+    /* ===== SLIDER BANNER ===== */
+.slider {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.slider img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
 </style>
 </head>
 
@@ -427,6 +484,21 @@ function abrirCategoria(id) {
 function voltarCategorias() {
     document.getElementById('categorias').style.display = 'grid';
     document.querySelectorAll('.categoria-conteudo').forEach(c => c.style.display = 'none');
+}
+</script>
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slider img');
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+}
+
+if (slides.length > 0) {
+    slides[0].classList.add('active');
+    setInterval(showSlides, 4000); // troca a cada 4 segundos
 }
 </script>
 
