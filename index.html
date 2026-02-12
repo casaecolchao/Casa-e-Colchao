@@ -206,7 +206,7 @@ Sua loja de colchões em Uberlândia com colchão de casal, colchão de solteiro
 <div class="categoria-card">
 <img src="categoria-toalhas.jpg">
 <h3>Toalhas e Roupas de Cama</h3>
-<span class="btn btn-breve">Em breve</span>
+<span class="btn btn-ativo" onclick="abrirCategoria2()">Ver produtos</span>
 </div>
 
 <div class="categoria-card">
@@ -274,7 +274,32 @@ Sua loja de colchões em Uberlândia com colchão de casal, colchão de solteiro
 
 </div>
 </div>
+<!-- CATEGORIA TOALHAS -->
+<div id="cat2" class="categoria-conteudo">
+<div class="voltar" onclick="voltarCategorias2()">← Voltar às categorias</div>
 
+<div class="grid">
+
+<div class="card"><img src="IMG_001.jpeg"><h3>Produto 1</h3></div>
+<div class="card"><img src="IMG_1196.png"><h3>Produto 2</h3></div>
+<div class="card"><img src="IMG_1297.PNG"><h3>Produto 3</h3></div>
+<div class="card"><img src="IMG_1315.PNG"><h3>Produto 4</h3></div>
+<div class="card"><img src="IMG_1316.PNG"><h3>Produto 5</h3></div>
+<div class="card"><img src="IMG_1317.PNG"><h3>Produto 6</h3></div>
+<div class="card"><img src="IMG_1318.PNG"><h3>Produto 7</h3></div>
+<div class="card"><img src="IMG_1319.PNG"><h3>Produto 8</h3></div>
+<div class="card"><img src="IMG_1505.JPG"><h3>Produto 9</h3></div>
+<div class="card"><img src="IMG_1508.JPG"><h3>Produto 10</h3></div>
+<div class="card"><img src="IMG_1743.PNG"><h3>Produto 11</h3></div>
+<div class="card"><img src="IMG_1747.PNG"><h3>Produto 12</h3></div>
+<div class="card"><img src="IMG_1759.PNG"><h3>Produto 13</h3></div>
+<div class="card"><img src="IMG_1762.PNG"><h3>Produto 14</h3></div>
+<div class="card"><img src="IMG_1812.jpg"><h3>Produto 15</h3></div>
+<div class="card"><img src="IMG_2068.PNG"><h3>Produto 16</h3></div>
+<div class="card"><img src="IMG_2120.PNG"><h3>Produto 17</h3></div>
+
+</div>
+</div>
 </section>
 
 <section id="instagram">
@@ -312,6 +337,15 @@ document.getElementById('cat1').style.display='block';
 }
 function voltarCategorias(){
 document.getElementById('cat1').style.display='none';
+document.getElementById('categorias').style.display='grid';
+}
+    function abrirCategoria2(){
+document.getElementById('categorias').style.display='none';
+document.getElementById('cat2').style.display='block';
+}
+
+function voltarCategorias2(){
+document.getElementById('cat2').style.display='none';
 document.getElementById('categorias').style.display='grid';
 }
 </script>
